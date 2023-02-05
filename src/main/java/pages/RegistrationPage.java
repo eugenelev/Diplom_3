@@ -1,4 +1,5 @@
 package pages;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,20 +24,24 @@ public class RegistrationPage {
         this.driver = driver;
     }
 
+    @Step("Нажать на кнопку 'Зарегистрироваться'")
     public void clickRegistrationButton() {
         driver.findElement(buttonRegistration).click();
     }
 
+    @Step("Получить ошибку регистрации")
     public String getErrorTextRegistration() {
         String text = driver.findElement(errorText).getText();
         return text;
     }
 
+    @Step("Ожидаем заголовок 'Регистрация' на экране регистрации")
     public void waitForTitleRegistration() {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(titleRegistration));
     }
 
+    @Step("Нажать на кнопку-ссылку 'Войти'")
         public void clickLoginButtonLink() {
         driver.findElement(buttonLinkLogin).click();
     }

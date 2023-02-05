@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,27 +27,28 @@ public class LoginSignInFieldsPage {
         this.registrationPage = registrationPage;
     }
 
-    // Метод заполнения поля - Имя
+    @Step("Заполнить поле 'Имя'")
     public void setName(String name) {
         driver.findElement(fieldName).click();
         driver.findElement(fieldName).clear();
         driver.findElement(fieldName).sendKeys(name);
     }
 
-    // Метод заполнения поля - Email
+    @Step("Заполнить поле 'Email'")
     public void setFieldEmail(String email) {
         driver.findElement(fieldEmail).click();
         driver.findElement(fieldEmail).clear();
         driver.findElement(fieldEmail).sendKeys(email);
     }
 
-    // Метод заполнения поля - Password
+    @Step("Заполнить поле 'password'")
     public void setFieldPassword(String password) {
         driver.findElement(fieldPassword).click();
         driver.findElement(fieldPassword).clear();
         driver.findElement(fieldPassword).sendKeys(password);
     }
 
+    @Step("Выполнить регистрацию юзера")
     public void registrationUser(String name, String email, String password) {
         new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.elementToBeClickable(driver.findElement(registrationPage.buttonRegistration)));
@@ -56,6 +58,7 @@ public class LoginSignInFieldsPage {
         registrationPage.clickRegistrationButton();
     }
 
+    @Step("Авторизоваться юзером")
     public void loginUser(String email, String password) {
         new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.elementToBeClickable(driver.findElement(loginPage.buttonLogin)));

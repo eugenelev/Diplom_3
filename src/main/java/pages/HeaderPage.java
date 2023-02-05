@@ -1,4 +1,5 @@
 package pages;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -19,14 +20,17 @@ public class HeaderPage{
         this.driver = driver;
     }
 
+    @Step("Клик на раздел 'Личный кабинет'")
     public void clickPersonalAccountButton() {
         driver.findElement(sectionPersonalAccount).click();
     }
 
+    @Step("Клик на раздел 'Конструктор'")
     public void clickSectionConstructor() {
         driver.findElement(sectionConstructor).click();
     }
 
+    @Step("Клик на лого 'Stellar Burgers'")
     public void clickByLogoStellarBurgers() {
         driver.findElement(logoStellarBurgers).click();
     }

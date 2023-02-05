@@ -12,12 +12,12 @@ import static org.junit.Assert.assertEquals;
 
 public class LoginTest  extends BaseTest {
 
-    LoginPage loginPage;
-    LoginSignInFieldsPage loginSignInFieldsPage;
-    RegistrationPage registrationPage;
-    RecoveryPasswordPage recoveryPasswordPage;
-    MainPage mainPage;
-    HeaderPage headerPage;
+    private LoginPage loginPage;
+    private LoginSignInFieldsPage loginSignInFieldsPage;
+    private RegistrationPage registrationPage;
+    private RecoveryPasswordPage recoveryPasswordPage;
+    private MainPage mainPage;
+    private HeaderPage headerPage;
     private User user;
     private UserClient UserClient;
     private String token;

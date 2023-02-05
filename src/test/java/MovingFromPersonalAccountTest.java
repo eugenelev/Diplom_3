@@ -8,21 +8,16 @@ import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import pages.*;
 import static helpers.URLs.*;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-
-
-
-
 public class MovingFromPersonalAccountTest extends BaseTest {
-    AccountPage accountPage;
-    LoginPage loginPage;
-    LoginSignInFieldsPage loginSignInFieldsPage;
-    RegistrationPage registrationPage;
-    RecoveryPasswordPage recoveryPasswordPage;
-    MainPage mainPage;
-    HeaderPage headerPage;
+    private AccountPage accountPage;
+    private LoginPage loginPage;
+    private LoginSignInFieldsPage loginSignInFieldsPage;
+    private RegistrationPage registrationPage;
+    private RecoveryPasswordPage recoveryPasswordPage;
+    private MainPage mainPage;
+    private HeaderPage headerPage;
     private User user;
     private UserClient UserClient;
     private String token;

@@ -1,4 +1,5 @@
 package pages;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -25,10 +26,12 @@ public class LoginPage {
         this.loginSignInFieldsPage = loginSignInFieldsPage;
     }
 
+    @Step("Заполнить поле 'Имя'")
     public void clickLoginButton() {
         driver.findElement(buttonLogin).click();
     }
 
+    @Step("Авторизоваться")
     public void loginUser(String email, String password) {
         new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.elementToBeClickable(driver.findElement(buttonLogin)));
@@ -37,11 +40,13 @@ public class LoginPage {
         clickLoginButton();
     }
 
+    @Step("Ожидаем заголовок 'Вход' на экране авторизации")
     public void waitForTitleLoginPage() {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(titleLoginPage));
     }
 
+    @Step("Нажать на кнопку 'Восстановить пароль'")
     public void clickRecoverPasswordButtonLink() {
         driver.findElement(buttonLinkRecoverPassword).click();
         recoveryPasswordPage.waitForTitleRecover();

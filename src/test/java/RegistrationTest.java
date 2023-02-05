@@ -15,7 +15,7 @@ public class RegistrationTest  extends BaseTest {
 
 
     private final String ERROR_TEXT = "Некорректный пароль";
-    RecoveryPasswordPage recoveryPasswordPage;
+    private RecoveryPasswordPage recoveryPasswordPage;
     RegistrationPage registrationPage;
     LoginPage loginPage;
     LoginSignInFieldsPage loginSignInFieldsPage;

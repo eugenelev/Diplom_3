@@ -9,15 +9,13 @@ import static org.junit.Assert.assertTrue;
 
 public class ChangeTabInConstructorTest extends BaseTest {
 
-    AccountPage accountPage;
-    LoginPage loginPage;
-    LoginSignInFieldsPage loginSignInFieldsPage;
-    RegistrationPage registrationPage;
-    RecoveryPasswordPage recoveryPasswordPage;
-    MainPage mainPage;
-    HeaderPage headerPage;
-
-
+    private AccountPage accountPage;
+    private LoginPage loginPage;
+    private LoginSignInFieldsPage loginSignInFieldsPage;
+    private RegistrationPage registrationPage;
+    private RecoveryPasswordPage recoveryPasswordPage;
+    private MainPage mainPage;
+    private HeaderPage headerPage;
 
     @Before
     public void setUp() {

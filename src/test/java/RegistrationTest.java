@@ -1,5 +1,6 @@
 import helpers.User;
 import helpers.UserGenerator;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Before;
 import org.junit.Test;
 import pages.LoginPage;
@@ -30,6 +31,7 @@ public class RegistrationTest  extends BaseTest {
     }
 
     @Test
+    @DisplayName("Успешное прохождение авторизации")
     public void checkSuccesfullRegistration() {
         registrationPage = new RegistrationPage(driver);
         loginSignInFieldsPage = new LoginSignInFieldsPage(driver, loginPage, registrationPage);
@@ -46,6 +48,7 @@ public class RegistrationTest  extends BaseTest {
     }
 
     @Test
+    @DisplayName("Проверка на невозможность зарегистрироваться с паролем меньше 6 символов")
     public void checkImpossubleRegistrationWithPasswordLessThanSixSymbols() {
         registrationPage = new RegistrationPage(driver);
         loginSignInFieldsPage = new LoginSignInFieldsPage(driver, loginPage, registrationPage);

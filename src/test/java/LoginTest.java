@@ -1,6 +1,7 @@
 import helpers.User;
 import helpers.UserClient;
 import helpers.UserGenerator;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
@@ -41,6 +42,7 @@ public class LoginTest  extends BaseTest {
     }
 
     @Test
+    @DisplayName("Авторизация с главной страницы")
     public void loginFromMainPage() {
         registrationPage = new RegistrationPage(driver);
         loginSignInFieldsPage = new LoginSignInFieldsPage(driver, loginPage, registrationPage);
@@ -58,6 +60,7 @@ public class LoginTest  extends BaseTest {
     }
 
     @Test
+    @DisplayName("Авторизация с экрана личного кабинета")
     public void loginFromPersonalAccount() {
         headerPage = new HeaderPage(driver);
         registrationPage = new RegistrationPage(driver);
@@ -77,6 +80,7 @@ public class LoginTest  extends BaseTest {
     }
 
     @Test
+    @DisplayName("Авторизация с экрана регистрации")
     public void loginFromRegistration() {
         headerPage = new HeaderPage(driver);
         registrationPage = new RegistrationPage(driver);
@@ -98,6 +102,7 @@ public class LoginTest  extends BaseTest {
     }
 
     @Test
+    @DisplayName("Авторизация с экрана восстановление пароля")
     public void loginFromRecoverPasswordForm() {
         recoveryPasswordPage = new RecoveryPasswordPage(driver);
         headerPage = new HeaderPage(driver);

@@ -1,6 +1,7 @@
 import helpers.User;
 import helpers.UserClient;
 import helpers.UserGenerator;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
@@ -8,9 +9,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import pages.*;
 import static helpers.URLs.*;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
 
 public class LogoutTest extends BaseTest {
     private AccountPage accountPage;
@@ -23,7 +22,6 @@ public class LogoutTest extends BaseTest {
     private User user;
     private UserClient UserClient;
     private String token;
-
 
     @Before
     public void setUp() {
@@ -43,6 +41,7 @@ public class LogoutTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Выход из учетки")
     public void logoutFromAccount() {
         accountPage = new AccountPage(driver);
         headerPage = new HeaderPage(driver);
@@ -61,7 +60,5 @@ public class LogoutTest extends BaseTest {
         boolean elementIsDisplayedAfterLogout = element.isDisplayed();
 
         assertTrue(elementIsDisplayedAfterLogout);
-
     }
-
 }

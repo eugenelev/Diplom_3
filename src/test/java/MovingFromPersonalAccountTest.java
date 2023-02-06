@@ -1,6 +1,7 @@
 import helpers.User;
 import helpers.UserClient;
 import helpers.UserGenerator;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
@@ -41,6 +42,7 @@ public class MovingFromPersonalAccountTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Переход на вкладку Конструктор из Личного кабинета")
     public void moveToConstructorFromPersonalAccount() {
         accountPage = new AccountPage(driver);
         headerPage = new HeaderPage(driver);
@@ -63,6 +65,7 @@ public class MovingFromPersonalAccountTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Переход на главный экран по клику на логотиа сайта")
     public void moveToConstructorByClickLogoSiteFromPersonalAccount() {
         accountPage = new AccountPage(driver);
         headerPage = new HeaderPage(driver);

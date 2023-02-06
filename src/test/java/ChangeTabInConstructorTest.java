@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -25,7 +26,8 @@ public class ChangeTabInConstructorTest extends BaseTest {
     }
 
     @Test
-    public void changeBetweenTabsInConstructor() {
+    @DisplayName("Переключение на вкладку 'Начинки' в конструкторе")
+    public void moveToTabFillingTabsInConstructor() {
         accountPage = new AccountPage(driver);
         headerPage = new HeaderPage(driver);
         registrationPage = new RegistrationPage(driver);
@@ -38,18 +40,41 @@ public class ChangeTabInConstructorTest extends BaseTest {
         WebElement fillingTitleInList = driver.findElement(By.xpath(String.format(mainPage.ingredientsTitleInListConstructor, "Начинки")));
         boolean fillingElementIsDisplayed = fillingTitleInList.isDisplayed();
         assertTrue(fillingElementIsDisplayed);
+    }
 
-        mainPage.clickTabConstructor("Булки");
-
-        WebElement BunTitleInList = driver.findElement(By.xpath(String.format(mainPage.ingredientsTitleInListConstructor, "Начинки")));
-        boolean bunElementIsDisplayed = BunTitleInList.isDisplayed();
-        assertTrue(bunElementIsDisplayed);
+    @Test
+    @DisplayName("Переключение на вкладку 'Соусы' в конструкторе")
+    public void moveToTabSauceTabsInConstructor() {
+        accountPage = new AccountPage(driver);
+        headerPage = new HeaderPage(driver);
+        registrationPage = new RegistrationPage(driver);
+        loginSignInFieldsPage = new LoginSignInFieldsPage(driver, loginPage, registrationPage);
+        loginPage = new LoginPage(driver, recoveryPasswordPage, loginSignInFieldsPage);
+        mainPage = new MainPage(driver, loginPage);
 
         mainPage.clickTabConstructor("Соусы");
 
         WebElement sauceTitleInList = driver.findElement(By.xpath(String.format(mainPage.ingredientsTitleInListConstructor, "Соусы")));
         boolean sauceElementIsDisplayed = sauceTitleInList.isDisplayed();
         assertTrue(sauceElementIsDisplayed);
+    }
+    
+    @Test
+    @DisplayName("Переключение на вкладку 'Булки' в конструкторе")
+    public void moveToTabBunTabsInConstructor() {
+        accountPage = new AccountPage(driver);
+        headerPage = new HeaderPage(driver);
+        registrationPage = new RegistrationPage(driver);
+        loginSignInFieldsPage = new LoginSignInFieldsPage(driver, loginPage, registrationPage);
+        loginPage = new LoginPage(driver, recoveryPasswordPage, loginSignInFieldsPage);
+        mainPage = new MainPage(driver, loginPage);
+
+        mainPage.clickTabConstructor("Начинки");
+        mainPage.clickTabConstructor("Булки");
+
+        WebElement fillingTitleInList = driver.findElement(By.xpath(String.format(mainPage.ingredientsTitleInListConstructor, "Булки")));
+        boolean fillingElementIsDisplayed = fillingTitleInList.isDisplayed();
+        assertTrue(fillingElementIsDisplayed);
     }
 
 }

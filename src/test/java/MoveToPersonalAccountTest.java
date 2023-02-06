@@ -1,6 +1,7 @@
 import helpers.User;
 import helpers.UserClient;
 import helpers.UserGenerator;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
@@ -44,6 +45,7 @@ public class MoveToPersonalAccountTest extends BaseTest  {
     }
 
     @Test
+    @DisplayName("Переход в профиль по клику на раздел Личный кабинет")
     public void moveToProfileByClickPersonalAccount() {
         accountPage = new AccountPage(driver);
         headerPage = new HeaderPage(driver);
